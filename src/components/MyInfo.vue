@@ -8,18 +8,27 @@
             <li>PYTHON</li>
         </ul>
 
-        <p v-show="mostrar_email">Mande uma mensagem para: {{email}}</p>
+        <p v-show="mostrar_email">Mande uma menssssagem para: {{email}}</p>
+        <p>Para acessar meu portifólio <a v-bind:href="meu_link">basta clicar aqui</a></p>
+
+        <MyPicture />
     </div>
 </template>
 
 <script>
+    import MyPicture from './MyPicture.vue'
+
     export default {
         name: 'MyInfo',
+        components: {
+            MyPicture
+        },
         data() {
             return {
-                esta_trabalhando: false,
+                esta_trabalhando: true,
                 mostrar_email: true,
-                email: 'fabricio_m.s@hotmail.com'
+                email: 'fabricio_m.s@hotmail.com',
+                meu_link: 'htpps://google.com.br'
             }
         },
     }
