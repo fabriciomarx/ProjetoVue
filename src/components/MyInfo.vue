@@ -3,9 +3,11 @@
         <p v-if="esta_trabalhando">Estou trabalhando no momento </p>
         <p v-else>Utilizo as seguintes tecnologias</p>
         <ul>
-            <li>JS</li>
-            <li>PHP</li>
-            <li>PYTHON</li>
+            <li v-for="(item,index) in backend_tecnologias" :key="index">{{item}}</li>
+        </ul>
+        <p>----------</p>
+        <ul>
+            <li v-for="item in frontend_tecnologias" :key="item.id">{{item.linguagem}}</li>
         </ul>
 
         <p v-show="mostrar_email">Mande uma menssssagem para: {{email}}</p>
@@ -33,7 +35,13 @@
                 mostrar_email: false,
                 email: 'fabricio_m.s@hotmail.com',
                 meu_link: 'https://google.com.br',
-                textoBotao: 'Mostrar email'
+                textoBotao: 'Mostrar email',
+                backend_tecnologias: ['JS','PHP','PYTHON'],
+                frontend_tecnologias: [
+                    {id: 1, linguagem: 'JS'},
+                    {id: 2, linguagem: 'PHP'},
+                    {id: 3, linguagem: 'PYTHON'}
+                ]
             }
         },
         methods: {
